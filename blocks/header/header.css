@@ -1,0 +1,197 @@
+/*
+ * ShieldGuard — Header Block
+ * Fixed top nav: white/blur background, emerald brand color, pill CTA
+ */
+
+/* ============================================================
+   NAV WRAPPER
+   ============================================================ */
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: var(--z-nav);
+  background-color: rgb(255 255 255 / 0.85);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgb(0 0 0 / 0.05);
+  transition: box-shadow var(--transition-base);
+}
+
+header.scrolled {
+  box-shadow: var(--shadow-md);
+}
+
+/* ============================================================
+   INNER LAYOUT
+   ============================================================ */
+header .header-wrapper {
+  max-width: var(--container-max);
+  margin-inline: auto;
+  padding-inline: var(--container-pad);
+  height: var(--nav-height);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-8);
+}
+
+/* ============================================================
+   BRAND / LOGO
+   ============================================================ */
+header .header-brand {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  text-decoration: none;
+  flex-shrink: 0;
+}
+
+header .header-brand img {
+  width: 2rem;
+  height: 2rem;
+  display: block;
+  color: var(--color-brand-primary);
+}
+
+header .header-brand .brand-name {
+  font-size: var(--font-size-xl);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-neutral-900);
+  letter-spacing: var(--letter-spacing-tight);
+  white-space: nowrap;
+}
+
+/* ============================================================
+   DESKTOP NAV LINKS
+   ============================================================ */
+header nav {
+  display: none;
+  align-items: center;
+  gap: var(--space-8);
+}
+
+@media (min-width: 768px) {
+  header nav {
+    display: flex;
+  }
+}
+
+header nav a {
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-medium);
+  color: var(--color-neutral-600);
+  text-decoration: none;
+  transition: color var(--transition-fast);
+  white-space: nowrap;
+}
+
+header nav a:hover,
+header nav a[aria-current='page'] {
+  color: var(--color-brand-primary);
+}
+
+/* CTA button in nav */
+header nav .nav-cta {
+  background-color: var(--color-neutral-900);
+  color: var(--color-white);
+  padding: var(--space-2) var(--space-5);
+  border-radius: var(--radius-full);
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-medium);
+  text-decoration: none;
+  transition: background-color var(--transition-fast);
+  white-space: nowrap;
+}
+
+header nav .nav-cta:hover {
+  background-color: var(--color-neutral-800);
+  color: var(--color-white);
+}
+
+/* ============================================================
+   MOBILE HAMBURGER
+   ============================================================ */
+header .nav-toggle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.5rem;
+  height: 2.5rem;
+  border: none;
+  background: none;
+  cursor: pointer;
+  color: var(--color-neutral-600);
+  border-radius: var(--radius-md);
+  transition: background-color var(--transition-fast);
+}
+
+header .nav-toggle:hover {
+  background-color: var(--color-neutral-100);
+}
+
+header .nav-toggle svg {
+  width: 1.5rem;
+  height: 1.5rem;
+}
+
+@media (min-width: 768px) {
+  header .nav-toggle { display: none; }
+}
+
+/* ============================================================
+   MOBILE MENU
+   ============================================================ */
+header .nav-mobile {
+  display: none;
+  border-top: 1px solid rgb(0 0 0 / 0.05);
+  background-color: var(--color-white);
+  padding: var(--space-6) var(--container-pad);
+}
+
+header .nav-mobile.open {
+  display: block;
+}
+
+@media (min-width: 768px) {
+  header .nav-mobile { display: none !important; }
+}
+
+header .nav-mobile a {
+  display: block;
+  font-size: var(--font-size-lg);
+  font-weight: var(--font-weight-medium);
+  color: var(--color-neutral-900);
+  padding: var(--space-3) 0;
+  text-decoration: none;
+  border-bottom: 1px solid var(--color-border-default);
+  transition: color var(--transition-fast);
+}
+
+header .nav-mobile a:last-of-type {
+  border-bottom: none;
+}
+
+header .nav-mobile a:hover {
+  color: var(--color-brand-primary);
+}
+
+header .nav-mobile .nav-mobile-cta {
+  display: block;
+  margin-top: var(--space-5);
+  width: 100%;
+  background-color: var(--color-brand-primary);
+  color: var(--color-white);
+  text-align: center;
+  padding: var(--space-3) var(--space-4);
+  border-radius: var(--radius-xl);
+  font-weight: var(--font-weight-semibold);
+  text-decoration: none;
+  transition: background-color var(--transition-fast);
+}
+
+header .nav-mobile .nav-mobile-cta:hover {
+  background-color: var(--color-brand-primary-hover);
+  color: var(--color-white);
+}

@@ -1,0 +1,66 @@
+/*
+ * ShieldGuard — CTA Banner Block
+ * Full-width emerald section with radial glow and centered content
+ */
+
+.cta-banner {
+  padding: var(--space-24) var(--container-pad);
+  background-color: var(--color-brand-primary);
+  position: relative;
+  overflow: hidden;
+  text-align: center;
+}
+
+/* Glow blobs */
+.cta-banner::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 24rem;
+  height: 24rem;
+  background: rgba(52, 211, 153, 0.5);
+  border-radius: var(--radius-full);
+  filter: blur(3rem);
+  transform: translate(50%, -50%);
+  pointer-events: none;
+}
+
+.cta-banner::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 18rem;
+  height: 18rem;
+  background: rgba(4, 120, 87, 0.4);
+  border-radius: var(--radius-full);
+  filter: blur(2.5rem);
+  transform: translate(-50%, 50%);
+  pointer-events: none;
+}
+
+.cta-banner-inner {
+  position: relative;
+  z-index: 1;
+  max-width: 48rem;
+  margin-inline: auto;
+}
+
+.cta-banner h2 {
+  font-size: var(--font-size-4xl);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-white);
+  margin-bottom: var(--space-6);
+  line-height: var(--line-height-tight);
+}
+
+.cta-banner p {
+  font-size: var(--font-size-lg);
+  color: rgba(209, 250, 229, 0.9);
+  margin-bottom: var(--space-10);
+}
+
+@media (max-width: 767px) {
+  .cta-banner h2 { font-size: var(--font-size-3xl); }
+}
